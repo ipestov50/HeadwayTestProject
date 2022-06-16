@@ -7,14 +7,15 @@
 import SwiftUI
 
 struct Home: View {
-    @State var selectedTab = "house"
+    @State var selectedIndex = 0
+    
+    
     
     @StateObject var searchData = SearchRepositories()
     var body: some View {
         
             VStack {
                 CustomSearchBar(searchData: searchData)
-                
                 Spacer()
             }
         

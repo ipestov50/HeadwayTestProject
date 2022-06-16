@@ -19,7 +19,6 @@ struct WelcomeView: View {
             VStack {
                 
                 if self.status {
-                    
 //                    Homescreen()
                     MainTabView()
                 }
