@@ -14,13 +14,16 @@
 		967BD636285610110093CD01 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD635285610110093CD01 /* Repository.swift */; };
 		967BD638285610500093CD01 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD637285610500093CD01 /* Home.swift */; };
 		967BD63A2856107F0093CD01 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD6392856107F0093CD01 /* CustomSearchBar.swift */; };
-		967BD63C285610A40093CD01 /* SearchRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD63B285610A40093CD01 /* SearchRepositories.swift */; };
+		967BD63C285610A40093CD01 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD63B285610A40093CD01 /* APIService.swift */; };
 		967BD63E285610BE0093CD01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD63D285610BE0093CD01 /* Extensions.swift */; };
 		967BD640285610E40093CD01 /* CustomSearchBar-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD63F285610E40093CD01 /* CustomSearchBar-ViewModel.swift */; };
 		967BD644285611070093CD01 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967BD643285611070093CD01 /* Database.swift */; };
 		96852390285B5C730056E508 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9685238F285B5C730056E508 /* MainTabView.swift */; };
 		96852392285B5CAD0056E508 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96852391285B5CAD0056E508 /* Favorites.swift */; };
-		969D14092858C01E00D6882A /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D14082858C01E00D6882A /* ModelView.swift */; };
+		969EC171286058B100D81BB8 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC170286058B100D81BB8 /* FavoritesViewModel.swift */; };
+		969EC19A2863472B00D81BB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1992863472B00D81BB8 /* LoginViewModel.swift */; };
+		969EC19C2863503C00D81BB8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC19B2863503C00D81BB8 /* SignUpViewModel.swift */; };
+		969EC1C6286387D400D81BB8 /* CustomSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1C5286387D400D81BB8 /* CustomSearchBarCell.swift */; };
 		96BA4ED928561A960077BE31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA4ED828561A960077BE31 /* AppDelegate.swift */; };
 		96BA4EDB28561C1C0077BE31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96BA4EDA28561C1C0077BE31 /* GoogleService-Info.plist */; };
 		96BA4EDE28565DF20077BE31 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA4EDD28565DF20077BE31 /* WelcomeView.swift */; };
@@ -41,13 +44,16 @@
 		967BD635285610110093CD01 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		967BD637285610500093CD01 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		967BD6392856107F0093CD01 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
-		967BD63B285610A40093CD01 /* SearchRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositories.swift; sourceTree = "<group>"; };
+		967BD63B285610A40093CD01 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		967BD63D285610BE0093CD01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		967BD63F285610E40093CD01 /* CustomSearchBar-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomSearchBar-ViewModel.swift"; sourceTree = "<group>"; };
 		967BD643285611070093CD01 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		9685238F285B5C730056E508 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		96852391285B5CAD0056E508 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
-		969D14082858C01E00D6882A /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		969EC170286058B100D81BB8 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		969EC1992863472B00D81BB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		969EC19B2863503C00D81BB8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		969EC1C5286387D400D81BB8 /* CustomSearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarCell.swift; sourceTree = "<group>"; };
 		96BA4ED828561A960077BE31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96BA4EDA28561C1C0077BE31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96BA4EDD28565DF20077BE31 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -78,17 +84,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9636A7A42857188C0008FB7C /* Views */ = {
+		9636A7A42857188C0008FB7C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				96852393285B6A5D0056E508 /* Home&Search */,
 				969D140A2858C6AA00D6882A /* TabBar */,
-				96BA4EE728565F090077BE31 /* Login-SignUp */,
-				96BA4EDD28565DF20077BE31 /* WelcomeView.swift */,
+				96BA4EE728565F090077BE31 /* Login&SignUp */,
 				96BA4EDF28565E370077BE31 /* Homescreen.swift */,
+				96BA4EDD28565DF20077BE31 /* WelcomeView.swift */,
 				96852391285B5CAD0056E508 /* Favorites.swift */,
+				969EC170286058B100D81BB8 /* FavoritesViewModel.swift */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		967BD61628560FAD0093CD01 = {
@@ -112,10 +119,9 @@
 		967BD62128560FAD0093CD01 /* HeadwaySwiftUITestProject */ = {
 			isa = PBXGroup;
 			children = (
-				9636A7A42857188C0008FB7C /* Views */,
+				9636A7A42857188C0008FB7C /* Screens */,
 				96BA4EE9285667300077BE31 /* Utilities */,
-				967BD63428560FF90093CD01 /* Model */,
-				967BD63228560FEF0093CD01 /* ViewModel */,
+				967BD63228560FEF0093CD01 /* Service */,
 				967BD63128560FE90093CD01 /* Helpers */,
 				967BD63028560FE30093CD01 /* Data */,
 				967BD62428560FAD0093CD01 /* ContentView.swift */,
@@ -148,26 +154,17 @@
 			isa = PBXGroup;
 			children = (
 				967BD63D285610BE0093CD01 /* Extensions.swift */,
-				967BD63F285610E40093CD01 /* CustomSearchBar-ViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		967BD63228560FEF0093CD01 /* ViewModel */ = {
+		967BD63228560FEF0093CD01 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				967BD63B285610A40093CD01 /* SearchRepositories.swift */,
-				969D14082858C01E00D6882A /* ModelView.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		967BD63428560FF90093CD01 /* Model */ = {
-			isa = PBXGroup;
-			children = (
+				967BD63B285610A40093CD01 /* APIService.swift */,
 				967BD635285610110093CD01 /* Repository.swift */,
 			);
-			path = Model;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		96852393285B6A5D0056E508 /* Home&Search */ = {
@@ -175,6 +172,8 @@
 			children = (
 				967BD637285610500093CD01 /* Home.swift */,
 				967BD6392856107F0093CD01 /* CustomSearchBar.swift */,
+				967BD63F285610E40093CD01 /* CustomSearchBar-ViewModel.swift */,
+				969EC1C5286387D400D81BB8 /* CustomSearchBarCell.swift */,
 			);
 			path = "Home&Search";
 			sourceTree = "<group>";
@@ -187,13 +186,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		96BA4EE728565F090077BE31 /* Login-SignUp */ = {
+		96BA4EE728565F090077BE31 /* Login&SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				96BA4EE128565E760077BE31 /* Login.swift */,
+				969EC1992863472B00D81BB8 /* LoginViewModel.swift */,
 				96BA4EE328565EA10077BE31 /* SignUp.swift */,
+				969EC19B2863503C00D81BB8 /* SignUpViewModel.swift */,
 			);
-			path = "Login-SignUp";
+			path = "Login&SignUp";
 			sourceTree = "<group>";
 		};
 		96BA4EE9285667300077BE31 /* Utilities */ = {
@@ -333,16 +334,19 @@
 				96BA4EE228565E760077BE31 /* Login.swift in Sources */,
 				967BD63A2856107F0093CD01 /* CustomSearchBar.swift in Sources */,
 				96BA4EE028565E370077BE31 /* Homescreen.swift in Sources */,
-				969D14092858C01E00D6882A /* ModelView.swift in Sources */,
+				969EC19C2863503C00D81BB8 /* SignUpViewModel.swift in Sources */,
+				969EC1C6286387D400D81BB8 /* CustomSearchBarCell.swift in Sources */,
 				967BD638285610500093CD01 /* Home.swift in Sources */,
 				96BA4EE428565EA10077BE31 /* SignUp.swift in Sources */,
 				96852392285B5CAD0056E508 /* Favorites.swift in Sources */,
+				969EC19A2863472B00D81BB8 /* LoginViewModel.swift in Sources */,
 				96852390285B5C730056E508 /* MainTabView.swift in Sources */,
 				967BD636285610110093CD01 /* Repository.swift in Sources */,
 				96BA4EDE28565DF20077BE31 /* WelcomeView.swift in Sources */,
+				969EC171286058B100D81BB8 /* FavoritesViewModel.swift in Sources */,
 				96BA4EE628565EC60077BE31 /* ErrorView.swift in Sources */,
 				967BD644285611070093CD01 /* Database.swift in Sources */,
-				967BD63C285610A40093CD01 /* SearchRepositories.swift in Sources */,
+				967BD63C285610A40093CD01 /* APIService.swift in Sources */,
 				96BA4ED928561A960077BE31 /* AppDelegate.swift in Sources */,
 				967BD63E285610BE0093CD01 /* Extensions.swift in Sources */,
 			);

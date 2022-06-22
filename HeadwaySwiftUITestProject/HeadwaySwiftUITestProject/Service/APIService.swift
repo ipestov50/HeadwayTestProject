@@ -6,20 +6,12 @@
 
 import SwiftUI
 
-class SearchRepositories: ObservableObject {
-    
-    @Published var searchedRepository: [Repository] = []
-    
-    // Repository query...
-    @Published var query = ""
-    
-    // Current Result Page
-    @Published var page = 1
+class APIService: ObservableObject {
     
     // Sort by stars
-    @Published var sort = "stars"
+    private let sort = "stars"
     
-    func find() {
+    func find(query: String, page: Int, completion: @escaping ([Repository]?) -> (Void) ) {
         // removing spaces
         let searchQuery = query.replacingOccurrences(of: " ", with: "%20")
         
@@ -34,16 +26,18 @@ class SearchRepositories: ObservableObject {
                 let repositories = try JSONDecoder().decode(Results.self, from: jsonData)
                 // appending to searched Repositories...
                 DispatchQueue.main.async {
-                    // removing data if its new request...
-                    if self.page == 1 {
-                        self.searchedRepository.removeAll()
-                    }
                     // checking if any data already loaded is again loaded...
                     // ignores already loaded
-                    self.searchedRepository = Array(Set(self.searchedRepository).union(Set(repositories.items)))
+                    
+                    completion(repositories.items)
                 }
             } catch {
-                print(error.localizedDescription)
+                print(error)
+                
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                
             }
         }
         .resume()

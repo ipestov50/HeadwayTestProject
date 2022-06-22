@@ -30,7 +30,7 @@ struct WelcomeView: View {
                         }
                         .hidden()
                         
-                        Login(show: self.$show)
+                        Login(show: $show)
                     }
                 }
             }

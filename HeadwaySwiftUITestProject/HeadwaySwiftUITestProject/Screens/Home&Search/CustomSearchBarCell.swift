@@ -1,17 +1,19 @@
-//  CustomSearchBar.swift
+//
+//  CustomSearchBarCell.swift
 //  HeadwaySwiftUITestProject
 //
-//  Created by Ivan Pestov on 07.06.2022.
+//  Created by Ivan Pestov on 22.06.2022.
 //
 
 import SwiftUI
 
-struct CustomSearchBar: View {
-    @StateObject private var vm = ViewModel()
+struct CustomSearchBarCell: View {
     
-    @ObservedObject var searchData: SearchRepositories
+    @StateObject var vm = ViewModel()
+    
+    let customSearchBar = CustomSearchBar()
+    
     var body: some View {
-        
         VStack(spacing: 0) {
             HStack(spacing: 12) {
                 
@@ -19,52 +21,58 @@ struct CustomSearchBar: View {
                     .font(.title2)
                     .foregroundColor(.gray)
                 
-                TextField("Find Repository", text: $searchData.query)
+                
+                TextField("Find Repository", text: $vm.query)
                     .autocapitalization(.none)
+                    .onChange(of: vm.query) { newValue in
+                        vm.onChange(query: newValue)
+                    }
             }
             .padding(.vertical, 10)
             .padding(.horizontal)
             
             
-            if !searchData.searchedRepository.isEmpty {
+            if !vm.data.isEmpty {
                 ScrollView(.vertical, showsIndicators: true) {
                     
                     LazyVStack(alignment: .leading,spacing: 0) {
                         
                         // Safe Wrap
-                        ForEach(searchData.searchedRepository,id: \.self) { repository in
+                        
+                        
+                        ForEach(vm.data,id: \.self) { data in
+                            
                             HStack {
                                 VStack(alignment: .leading, spacing: 0) {
-                                    Text(repository.name)
-                                    Link(repository.name, destination: URL(string: repository.html_url)!)
+                                    Text(data.repository.name ?? "No name")
+                                    Link(data.repository.name ?? "No name", destination: URL(string: data.repository.html_url ?? "https://google.com")!)
+                                        .onTapGesture {
+                                            vm.toggleFav(item: data.repository)
+                                        }
                                 }
                                 Spacer()
-                                Image(systemName: vm.contains(repository) ? "heart.fill" : "heart")
+                                Image(systemName: data.isLiked ? "heart.fill" : "heart")
                                     .foregroundColor(.pink)
                                     .onTapGesture {
-                                        vm.toggleFav(item: repository)
+                                        vm.toggleFav(item: data.repository)
                                     }
-                                    .offset(y: -10)
+                                    .offset(y: -12)
+                                Text(data.isLiked ? "Seen" : "")
+                                    .foregroundColor(.green)
+                                    .offset(y: -12)
                             }
                             
                             .padding(.horizontal)
                             .onAppear {
                                 // stopping search until 3rd page
-                                if repository.node_id == searchData.searchedRepository.last?.node_id && searchData.page <= 3 {
-                                    searchData.page += 1
-                                    searchData.find()
-                                }
-                                
+                                vm.onAppear(repository: data.repository)
                             }
-                            
                         }
-
                     }
                     .padding(.top)
                 }
                 .frame(height: 240)
             }
-            
         }
         .background(.blue)
         .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -72,8 +80,8 @@ struct CustomSearchBar: View {
     }
 }
 
-struct CustomSearchBarPreview: PreviewProvider {
+struct CustomSearchBarCell_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        CustomSearchBarCell()
     }
 }
