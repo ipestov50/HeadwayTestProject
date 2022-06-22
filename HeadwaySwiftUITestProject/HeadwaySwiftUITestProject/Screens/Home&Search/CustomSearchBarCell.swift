@@ -46,10 +46,11 @@ struct CustomSearchBarCell: View {
                                 VStack(alignment: .leading, spacing: 0) {
                                     Text(data.repository.name ?? "No name")
                                     Link(data.repository.name ?? "No name", destination: URL(string: data.repository.html_url ?? "https://google.com")!)
-                                        .onTapGesture {
+                                        .simultaneousGesture(TapGesture().onEnded {
                                             vm.toggleFav(item: data.repository)
-                                        }
+                                        })
                                 }
+                                
                                 Spacer()
                                 Image(systemName: data.isLiked ? "heart.fill" : "heart")
                                     .foregroundColor(.pink)
