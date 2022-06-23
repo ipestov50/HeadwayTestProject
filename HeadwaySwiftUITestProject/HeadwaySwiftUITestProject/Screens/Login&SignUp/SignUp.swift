@@ -9,15 +9,8 @@ import Firebase
 
 struct SignUp : View {
     
-    @State var color        = Color.black.opacity(0.7)
-    @State var email        = ""
-    @State var pass         = ""
-    @State var repass       = ""
-    @State var visible      = false
-    @State var revisible    = false
-    @Binding var show       : Bool
-    @State var alert        = false
-    @State var error        = ""
+    @StateObject var vm = SignUpViewModel()
+    @Binding var show : Bool
     
     var body: some View{
         
@@ -34,75 +27,75 @@ struct SignUp : View {
                         Text("Register new account")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .foregroundColor(self.color)
+                            .foregroundColor(vm.color)
                             .padding(.top, 35)
                         
-                        TextField("Email", text: self.$email)
+                        TextField("Email", text: $vm.email)
                         .autocapitalization(.none)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 4).stroke(self.email != "" ? Color("Color") : self.color,lineWidth: 2))
+                        .background(RoundedRectangle(cornerRadius: 4).stroke(vm.email != "" ? Color("Color") : vm.color,lineWidth: 2))
                         .padding(.top, 25)
                         
                         HStack(spacing: 15){
                             
                             VStack{
                                 
-                                if self.visible{
+                                if vm.visible{
                                     
-                                    TextField("Password", text: self.$pass)
+                                    TextField("Password", text: $vm.pass)
                                     .autocapitalization(.none)
                                 }
                                 else{
                                     
-                                    SecureField("Password", text: self.$pass)
+                                    SecureField("Password", text: $vm.pass)
                                     .autocapitalization(.none)
                                 }
                             }
                             
                             Button(action: {
                                 
-                                self.visible.toggle()
+                                vm.visible.toggle()
                                 
                             }) {
                                 
-                                Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                                    .foregroundColor(self.color)
+                                Image(systemName: vm.visible ? "eye.slash.fill" : "eye.fill")
+                                    .foregroundColor(vm.color)
                             }
                             
                         }
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 4).stroke(self.pass != "" ? Color("Color") : self.color,lineWidth: 2))
+                        .background(RoundedRectangle(cornerRadius: 4).stroke(vm.pass != "" ? Color("Color") : vm.color,lineWidth: 2))
                         .padding(.top, 25)
                         
                         HStack(spacing: 15){
                             
                             VStack{
                                 
-                                if self.revisible{
+                                if vm.revisible{
                                     
-                                    TextField("Re-enter", text: self.$repass)
+                                    TextField("Re-enter", text: $vm.repass)
                                     .autocapitalization(.none)
                                 }
                                 else{
                                     
-                                    SecureField("Re-enter", text: self.$repass)
+                                    SecureField("Re-enter", text: $vm.repass)
                                     .autocapitalization(.none)
                                 }
                             }
                             
                             Button(action: {
                                 
-                                self.revisible.toggle()
+                                vm.revisible.toggle()
                                 
                             }) {
                                 
-                                Image(systemName: self.revisible ? "eye.slash.fill" : "eye.fill")
-                                    .foregroundColor(self.color)
+                                Image(systemName: vm.revisible ? "eye.slash.fill" : "eye.fill")
+                                    .foregroundColor(vm.color)
                             }
                             
                         }
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 4).stroke(self.repass != "" ? Color("Color") : self.color,lineWidth: 2))
+                        .background(RoundedRectangle(cornerRadius: 4).stroke(vm.repass != "" ? Color("Color") : vm.color,lineWidth: 2))
                         .padding(.top, 25)
                         
                         
@@ -130,53 +123,18 @@ struct SignUp : View {
                             .font(.title)
                             .foregroundColor(Color("Color"))
                     }
-                    
                     .padding()
-                    
                 }
             }
             
-            if self.alert{
+            if vm.alert{
                 
-                ErrorView(alert: self.$alert, error: self.$error)
+                ErrorView(alert: $vm.alert, error: $vm.error)
             }
         }
         .navigationBarBackButtonHidden(true)
     }
     
-    func register(){
-        
-        if self.email != ""{
-            
-            if self.pass == self.repass{
-                
-                Auth.auth().createUser(withEmail: self.email, password: self.pass) { (res, err) in
-                    
-                    if err != nil{
-                        
-                        self.error = err!.localizedDescription
-                        self.alert.toggle()
-                        return
-                    }
-                    
-                    print("success")
-                    
-                    UserDefaults.standard.set(true, forKey: "status")
-                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-                }
-            }
-            else{
-                
-                self.error = "Password mismatch"
-                self.alert.toggle()
-            }
-        }
-        else{
-            
-            self.error = "Please fill all the contents properly"
-            self.alert.toggle()
-        }
-    }
 }
 
 struct SignUpPreview: PreviewProvider {
