@@ -29,7 +29,7 @@ struct MainTabView: View {
                 NavigationView {
                     Favorites()
                 }
-                .navigationTitle("Favorites")
+//                .navigationTitle("Favorites")
             }
         }
         

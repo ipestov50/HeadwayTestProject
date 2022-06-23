@@ -13,7 +13,6 @@ struct Favorites: View {
     @StateObject private var favVm = FavoritesViewModel()
     
     var body: some View {
-        
         VStack {  
             List {
                 ForEach(favVm.savedItems) { item in

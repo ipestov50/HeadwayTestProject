@@ -5,7 +5,6 @@
 //  Created by Ivan Pestov on 09.06.2022.
 //
 
-import Foundation
 import SwiftUI
 
 final class ViewModel: ObservableObject {
@@ -56,6 +55,8 @@ final class ViewModel: ObservableObject {
                 self.page = 1
                 self.networkManager.find(query: query, page: self.page, completion: { repositories in
                     
+                    DispatchQueue.main.async {
+                        self.isLoading = false
                         switch repositories {
                         case .success(let repositories):
                             self.data = self.updateData(repositories ?? [], liked)
@@ -82,13 +83,14 @@ final class ViewModel: ObservableObject {
                                 }
                             }
                         }
-                    
+                    }
+                        
                 })
             } else {
                 // removing all searched Data...
                 self.data.removeAll()
             }
-            self.isLoading = false
+            
         }
     }
     
@@ -132,14 +134,4 @@ final class ViewModel: ObservableObject {
         return data
     }
 }
-
-
-
-
-// TODO
-
-// 54 строка
-// 68 строка
-
-// после запроса репозиториев найти в сохраненных репозиториях те которые пришли от сервера и если они там содержатся выставить им параметр isLike = true
 
