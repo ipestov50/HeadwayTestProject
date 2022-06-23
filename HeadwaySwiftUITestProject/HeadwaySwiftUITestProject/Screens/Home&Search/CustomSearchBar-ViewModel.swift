@@ -12,6 +12,7 @@ final class ViewModel: ObservableObject {
     
     @Published var data = [RepositoryUI]() // репозитории от сервера
     @Published var query = ""
+    @Published var alertItem: AlertItem?
     
     struct RepositoryUI: Identifiable, Codable, Hashable {
         var id: Int {
@@ -23,7 +24,7 @@ final class ViewModel: ObservableObject {
     
     private var page = 1
     
-    var apiService = APIService()
+    var networkManager = NetworkManager()
     
     private var db = Database.shared
     
@@ -52,9 +53,35 @@ final class ViewModel: ObservableObject {
             if query != "" {
                 // searcing Repository...
                 self.page = 1
-                self.apiService.find(query: query, page: self.page, completion: { repositories in
+                self.networkManager.find(query: query, page: self.page, completion: { repositories in
                     
-                    self.data = self.updateData(repositories ?? [], liked)
+                        switch repositories {
+                        case .success(let repositories):
+                            self.data = self.updateData(repositories ?? [], liked)
+                            
+                        case .failure(let error):
+                            switch repositories {
+                            case .success(let repositories):
+                                self.data += self.updateData(repositories ?? [], liked)
+                                
+                            case .failure(let error):
+                                switch error {
+                                case .invalidURL:
+                                    self.alertItem = AlertContext.invalidURL
+                                    
+                                case .invalidResponse:
+                                    self.alertItem = AlertContext.invalidResponse
+                                    
+                                case .invalidData:
+                                    self.alertItem = AlertContext.invalidData
+                                    
+                                case .unableToComplete:
+                                    self.alertItem = AlertContext.unableToComplete
+                                    
+                                }
+                            }
+                        }
+                    
                 })
             } else {
                 // removing all searched Data...
@@ -67,9 +94,30 @@ final class ViewModel: ObservableObject {
         let liked = db.read()
         if repository.node_id == data.last?.repository.node_id && page <= 3 {
             page += 1
-            self.apiService.find(query: query, page: self.page, completion: { repositories in
+            self.networkManager.find(query: query, page: self.page, completion: { [self] repositories in
                 
-                self.data += self.updateData(repositories ?? [], liked)
+                DispatchQueue.main.async {
+                    switch repositories {
+                    case .success(let repositories):
+                        self.data += self.updateData(repositories ?? [], liked)
+                        
+                    case .failure(let error):
+                        switch error {
+                        case .invalidURL:
+                            self.alertItem = AlertContext.invalidURL
+                            
+                        case .invalidResponse:
+                            self.alertItem = AlertContext.invalidResponse
+                            
+                        case .invalidData:
+                            self.alertItem = AlertContext.invalidData
+                            
+                        case .unableToComplete:
+                            self.alertItem = AlertContext.unableToComplete
+                            
+                        }
+                    }
+                }
             })
         }
     }

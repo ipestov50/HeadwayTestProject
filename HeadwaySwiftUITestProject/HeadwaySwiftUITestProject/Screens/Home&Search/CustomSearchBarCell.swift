@@ -27,6 +27,12 @@ struct CustomSearchBarCell: View {
                     .onChange(of: vm.query) { newValue in
                         vm.onChange(query: newValue)
                     }
+                    .alert(item: $vm.alertItem) { alertItem in
+                        Alert(title: alertItem.title,
+                              message: alertItem.message,
+                              dismissButton: alertItem.dismissButton)
+                    }
+                    
             }
             .padding(.vertical, 10)
             .padding(.horizontal)
@@ -36,12 +42,9 @@ struct CustomSearchBarCell: View {
                 ScrollView(.vertical, showsIndicators: true) {
                     
                     LazyVStack(alignment: .leading,spacing: 0) {
-                        
                         // Safe Wrap
-                        
-                        
                         ForEach(vm.data,id: \.self) { data in
-                            
+ 
                             HStack {
                                 VStack(alignment: .leading, spacing: 0) {
                                     Text(data.repository.name ?? "No name")
@@ -62,8 +65,8 @@ struct CustomSearchBarCell: View {
                                     .foregroundColor(.green)
                                     .offset(y: -12)
                             }
-                            
                             .padding(.horizontal)
+                            
                             .onAppear {
                                 // stopping search until 3rd page
                                 vm.onAppear(repository: data.repository)
