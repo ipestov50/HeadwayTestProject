@@ -33,6 +33,7 @@
 		96BA4EE628565EC60077BE31 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA4EE528565EC60077BE31 /* ErrorView.swift */; };
 		96C4370A286497B100044EE5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C43709286497B100044EE5 /* NetworkError.swift */; };
 		96C437102864AAAA00044EE5 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C4370F2864AAAA00044EE5 /* Alert.swift */; };
+		96C437162864BCDD00044EE5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C437152864BCDD00044EE5 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		96BA4EE8285666B30077BE31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		96C43709286497B100044EE5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		96C4370F2864AAAA00044EE5 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		96C437152864BCDD00044EE5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			children = (
 				96BA4EE528565EC60077BE31 /* ErrorView.swift */,
 				96C4370F2864AAAA00044EE5 /* Alert.swift */,
+				96C437152864BCDD00044EE5 /* LoadingView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				967BD63C285610A40093CD01 /* NetworkManager.swift in Sources */,
 				96BA4ED928561A960077BE31 /* AppDelegate.swift in Sources */,
 				967BD63E285610BE0093CD01 /* Extensions.swift in Sources */,
+				96C437162864BCDD00044EE5 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ import SwiftUI
         // removing spaces
         let searchQuery = query.replacingOccurrences(of: " ", with: "%20")
         
-        let url = "https://api.gigthub.com/search/repositories?q=\(searchQuery)&per_page=30&sort=\(sort)&page=\(page)&order=desc&since=daily"
+        let url = "https://api.github.com/search/repositories?q=\(searchQuery)&per_page=30&sort=\(sort)&page=\(page)&order=desc&since=daily"
         let session = URLSession(configuration: .default)
         
         

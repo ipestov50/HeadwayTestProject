@@ -15,24 +15,27 @@ struct CustomSearchBarCell: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 12) {
-                
-                Image(systemName: "magnifyingglass")
-                    .font(.title2)
-                    .foregroundColor(.gray)
-                
-                
-                TextField("Find Repository", text: $vm.query)
-                    .autocapitalization(.none)
-                    .onChange(of: vm.query) { newValue in
-                        vm.onChange(query: newValue)
-                    }
-                    .alert(item: $vm.alertItem) { alertItem in
-                        Alert(title: alertItem.title,
-                              message: alertItem.message,
-                              dismissButton: alertItem.dismissButton)
-                    }
+            
+                HStack(spacing: 12) {
                     
+                    Image(systemName: "magnifyingglass")
+                        .font(.title2)
+                        .foregroundColor(.gray)
+                    
+                    
+                    TextField("Find Repository", text: $vm.query)
+                        .autocapitalization(.none)
+                        .onChange(of: vm.query) { newValue in
+                            vm.onChange(query: newValue)
+                        }
+                    if vm.isLoading {
+                        LoadingView()
+                    } 
+                }
+            .alert(item: $vm.alertItem) { alertItem in
+                Alert(title: alertItem.title,
+                      message: alertItem.message,
+                      dismissButton: alertItem.dismissButton)
             }
             .padding(.vertical, 10)
             .padding(.horizontal)
@@ -68,7 +71,6 @@ struct CustomSearchBarCell: View {
                             .padding(.horizontal)
                             
                             .onAppear {
-                                // stopping search until 3rd page
                                 vm.onAppear(repository: data.repository)
                             }
                         }

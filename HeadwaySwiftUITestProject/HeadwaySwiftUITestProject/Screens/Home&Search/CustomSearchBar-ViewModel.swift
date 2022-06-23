@@ -13,6 +13,7 @@ final class ViewModel: ObservableObject {
     @Published var data = [RepositoryUI]() // репозитории от сервера
     @Published var query = ""
     @Published var alertItem: AlertItem?
+    @Published var isLoading = false
     
     struct RepositoryUI: Identifiable, Codable, Hashable {
         var id: Int {
@@ -45,9 +46,9 @@ final class ViewModel: ObservableObject {
     
     func onChange(query: String) {
         let liked = db.read()
+        isLoading = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            
             print("search")
             
             if query != "" {
@@ -87,6 +88,7 @@ final class ViewModel: ObservableObject {
                 // removing all searched Data...
                 self.data.removeAll()
             }
+            self.isLoading = false
         }
     }
     
