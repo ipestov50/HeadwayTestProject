@@ -96,10 +96,7 @@
 				96852393285B6A5D0056E508 /* Home&Search */,
 				969D140A2858C6AA00D6882A /* TabBar */,
 				96BA4EE728565F090077BE31 /* Login&SignUp */,
-				96BA4EDF28565E370077BE31 /* Homescreen.swift */,
-				96BA4EDD28565DF20077BE31 /* WelcomeView.swift */,
-				96852391285B5CAD0056E508 /* Favorites.swift */,
-				969EC170286058B100D81BB8 /* FavoritesViewModel.swift */,
+				96C437292864F7BE00044EE5 /* ForTesting */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -125,10 +122,10 @@
 		967BD62128560FAD0093CD01 /* HeadwaySwiftUITestProject */ = {
 			isa = PBXGroup;
 			children = (
-				9636A7A42857188C0008FB7C /* Screens */,
+				96C437252864F69800044EE5 /* Model */,
 				96BA4EE9285667300077BE31 /* Utilities */,
-				967BD63228560FEF0093CD01 /* Service */,
-				967BD63128560FE90093CD01 /* Helpers */,
+				96C437272864F6D700044EE5 /* Views */,
+				9636A7A42857188C0008FB7C /* Screens */,
 				967BD63028560FE30093CD01 /* Data */,
 				967BD62428560FAD0093CD01 /* ContentView.swift */,
 				96BA4ED828561A960077BE31 /* AppDelegate.swift */,
@@ -156,31 +153,12 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		967BD63128560FE90093CD01 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				967BD63D285610BE0093CD01 /* Extensions.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		967BD63228560FEF0093CD01 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				967BD63B285610A40093CD01 /* NetworkManager.swift */,
-				967BD635285610110093CD01 /* Repository.swift */,
-				96C43709286497B100044EE5 /* NetworkError.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		96852393285B6A5D0056E508 /* Home&Search */ = {
 			isa = PBXGroup;
 			children = (
 				967BD637285610500093CD01 /* Home.swift */,
 				967BD6392856107F0093CD01 /* CustomSearchBar.swift */,
 				967BD63F285610E40093CD01 /* CustomSearchBar-ViewModel.swift */,
-				969EC1C5286387D400D81BB8 /* CustomSearchBarCell.swift */,
 			);
 			path = "Home&Search";
 			sourceTree = "<group>";
@@ -207,11 +185,81 @@
 		96BA4EE9285667300077BE31 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				96BA4EE528565EC60077BE31 /* ErrorView.swift */,
-				96C4370F2864AAAA00044EE5 /* Alert.swift */,
-				96C437152864BCDD00044EE5 /* LoadingView.swift */,
+				96C437242864F61C00044EE5 /* Alerts&Errors */,
+				96C437222864F5E400044EE5 /* Managers */,
+				96C437212864F5D700044EE5 /* Extensions */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		96C437212864F5D700044EE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				967BD63D285610BE0093CD01 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		96C437222864F5E400044EE5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				967BD63B285610A40093CD01 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		96C437242864F61C00044EE5 /* Alerts&Errors */ = {
+			isa = PBXGroup;
+			children = (
+				96C4370F2864AAAA00044EE5 /* Alert.swift */,
+				96C43709286497B100044EE5 /* NetworkError.swift */,
+				96BA4EE528565EC60077BE31 /* ErrorView.swift */,
+			);
+			path = "Alerts&Errors";
+			sourceTree = "<group>";
+		};
+		96C437252864F69800044EE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				967BD635285610110093CD01 /* Repository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96C437262864F6CB00044EE5 /* UIKit Components */ = {
+			isa = PBXGroup;
+			children = (
+				96C437152864BCDD00044EE5 /* LoadingView.swift */,
+			);
+			path = "UIKit Components";
+			sourceTree = "<group>";
+		};
+		96C437272864F6D700044EE5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96C437282864F6E100044EE5 /* Cells */,
+				96C437262864F6CB00044EE5 /* UIKit Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96C437282864F6E100044EE5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				969EC1C5286387D400D81BB8 /* CustomSearchBarCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		96C437292864F7BE00044EE5 /* ForTesting */ = {
+			isa = PBXGroup;
+			children = (
+				96BA4EDF28565E370077BE31 /* Homescreen.swift */,
+				96BA4EDD28565DF20077BE31 /* WelcomeView.swift */,
+				96852391285B5CAD0056E508 /* Favorites.swift */,
+				969EC170286058B100D81BB8 /* FavoritesViewModel.swift */,
+			);
+			path = ForTesting;
 			sourceTree = "<group>";
 		};
 		EB6D0B95DD687DF68790B606 /* Pods */ = {
