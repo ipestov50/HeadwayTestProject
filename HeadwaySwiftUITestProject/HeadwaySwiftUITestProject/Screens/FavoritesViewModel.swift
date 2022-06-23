@@ -10,6 +10,7 @@ import Foundation
 class FavoritesViewModel: ObservableObject {
     
     @Published var savedItems: Array<Repository> = []
+    
     public var db = Database.shared
     
     init() {

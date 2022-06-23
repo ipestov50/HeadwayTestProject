@@ -12,11 +12,9 @@ struct Favorites: View {
     // to do add view model
     @StateObject private var favVm = FavoritesViewModel()
     
-    
     var body: some View {
         
-        VStack {
-            
+        VStack {  
             List {
                 ForEach(favVm.savedItems) { item in
                     HStack {
@@ -28,14 +26,13 @@ struct Favorites: View {
                                 .font(.subheadline)
                         }
                         Spacer()
-                        
-                        
                     }
                 }
             }
-            
         }
+        .navigationTitle("Favorites")
     }
+        
     
 }
 
