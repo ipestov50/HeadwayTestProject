@@ -8,6 +8,12 @@ struct Repository: Identifiable, Codable, Hashable {
     var name: String?
     var html_url: String?
     var description: String?
+    var visibility: String? 
+    var language: String?
+    var updated_at: String?
+    var login: String?
+    
+    
     
     var isLiked: Bool?
     var isSeen: Bool? 
@@ -16,3 +22,4 @@ struct Repository: Identifiable, Codable, Hashable {
 struct Results: Codable {
     var items: [Repository]?
 }
+

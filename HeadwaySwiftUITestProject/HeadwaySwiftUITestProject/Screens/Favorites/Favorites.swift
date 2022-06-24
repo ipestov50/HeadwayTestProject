@@ -9,11 +9,12 @@ import Foundation
 import SwiftUI
 
 struct Favorites: View {
-    // to do add view model
     @StateObject private var favVm = FavoritesViewModel()
+    @State private var isShowingDetail = false
+    @State private var selectedRepository: Repository?
     
     var body: some View {
-        VStack {  
+        ZStack {  
             List {
                 ForEach(favVm.savedItems) { item in
                     HStack {
@@ -24,9 +25,21 @@ struct Favorites: View {
                             Text(item.description ?? "No description")
                                 .font(.subheadline)
                         }
+                        .onTapGesture {
+                            selectedRepository = item
+                            isShowingDetail = true
+                        }
+                        
                         Spacer()
                     }
+                    .blur(radius: isShowingDetail ? 20 : 0)
                 }
+            }
+            .disabled(isShowingDetail)
+            
+            
+            if isShowingDetail {
+                FavoritesDetailView(repository: selectedRepository!, isShowingDetail: $isShowingDetail)
             }
         }
         .navigationTitle("Favorites")
