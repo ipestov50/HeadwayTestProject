@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 // MARK: - Custom View Property Extensions
 extension View {
@@ -33,6 +34,7 @@ extension View {
     }
 }
 
+
 // MARK: - Color Extensions
 extension Color {
     static let brandPrimary = Color("brandPrimary")
@@ -41,3 +43,4 @@ extension Color {
 extension UIColor {
     static let brandPrimary = UIColor(named: "brandPrimary")
 }
+

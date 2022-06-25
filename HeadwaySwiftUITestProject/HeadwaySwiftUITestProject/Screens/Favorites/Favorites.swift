@@ -22,21 +22,19 @@ struct Favorites: View {
                             Text(item.name ?? "No name")
                                 .font(.headline)
                             Spacer()
-                            Text(item.description ?? "No description")
+                            Text("Short details...")
                                 .font(.subheadline)
+                                .foregroundColor(.secondary)
                         }
                         .onTapGesture {
                             selectedRepository = item
                             isShowingDetail = true
                         }
-                        
-                        Spacer()
                     }
                     .blur(radius: isShowingDetail ? 20 : 0)
                 }
             }
             .disabled(isShowingDetail)
-            
             
             if isShowingDetail {
                 FavoritesDetailView(repository: selectedRepository!, isShowingDetail: $isShowingDetail)
@@ -44,8 +42,6 @@ struct Favorites: View {
         }
         .navigationTitle("Favorites")
     }
-        
-    
 }
 
 struct Favorites_Previews: PreviewProvider {

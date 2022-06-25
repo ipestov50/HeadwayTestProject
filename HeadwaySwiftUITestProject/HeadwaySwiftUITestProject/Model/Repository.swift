@@ -10,16 +10,19 @@ struct Repository: Identifiable, Codable, Hashable {
     var description: String?
     var visibility: String? 
     var language: String?
-    var updated_at: String?
-    var login: String?
-    
-    
-    
+    var updated_at: String
+    var owner: Owner
+ 
     var isLiked: Bool?
-    var isSeen: Bool? 
+    var isSeen: Bool?
+    
 }
 
 struct Results: Codable {
     var items: [Repository]?
 }
 
+struct Owner: Codable, Hashable {
+
+    var login: String
+}

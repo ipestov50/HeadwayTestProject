@@ -29,11 +29,11 @@ struct FavoritesDetailView: View {
                     
                     HStack(spacing: 20) {
                         VStack {
-                            Text("Name")
+                            Text("Username")
                                 .bold()
                                 .font(.caption)
                             
-                            Text(repository?.login ?? "-")
+                            Text(repository?.owner.login ?? "-")
                                 .foregroundColor(.secondary)
                                 .fontWeight(.semibold)
                                 .italic()
@@ -81,7 +81,7 @@ struct FavoritesDetailView: View {
 //                .padding(.bottom, 20)
                 
                 VStack {
-                    Text("Updated at:")
+                    Text("Updated at:") // работаю над датой...
                         .bold()
                         .font(.caption)
                     
@@ -89,6 +89,7 @@ struct FavoritesDetailView: View {
                         .foregroundColor(.secondary)
                         .fontWeight(.light)
                         .italic()
+                    
                 }
                 .padding(.bottom, 10)
                 
@@ -115,8 +116,12 @@ struct FavoritesDetailView: View {
         }
     }
 
-struct FavoritesDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoritesDetailView(repository: Repository(id: 0, node_id: "", name: "react-native", html_url: "", description: "UIApplicationgetKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.", visibility: "private", language: "Java-Script", updated_at: "29 apr.", login: "GXfelix", isLiked: true, isSeen: true), isShowingDetail: .constant(true))
-    }
+extension FavoritesDetailView {
+//    
 }
+
+//struct FavoritesDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FavoritesDetailView(repository: Repository(id: 0, node_id: "", name: "react-native", html_url: "", description: "UIApplicationgetKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.", visibility: "private", language: "Java-Script", updated_at: "29 apr.", login: "GXfelix", isLiked: true, isSeen: true), isShowingDetail: .constant(true))
+//    }
+//}
