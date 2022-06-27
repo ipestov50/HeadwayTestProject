@@ -86,8 +86,8 @@ struct CustomSearchBarCell: View {
     }
 }
 
-struct CustomSearchBarCell_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomSearchBarCell()
-    }
-}
+//struct CustomSearchBarCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CustomSearchBarCell(isLiked: $isliked)
+//    }
+//}

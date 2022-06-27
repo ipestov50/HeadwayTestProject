@@ -25,6 +25,8 @@
 		969EC19A2863472B00D81BB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1992863472B00D81BB8 /* LoginViewModel.swift */; };
 		969EC19C2863503C00D81BB8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC19B2863503C00D81BB8 /* SignUpViewModel.swift */; };
 		969EC1C6286387D400D81BB8 /* CustomSearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1C5286387D400D81BB8 /* CustomSearchBarCell.swift */; };
+		96B6E7932869CFD5006C60F7 /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6E7922869CFD5006C60F7 /* XDismissButton.swift */; };
+		96B6E7952869D359006C60F7 /* TPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6E7942869D359006C60F7 /* TPButton.swift */; };
 		96BA4ED928561A960077BE31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA4ED828561A960077BE31 /* AppDelegate.swift */; };
 		96BA4EDB28561C1C0077BE31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96BA4EDA28561C1C0077BE31 /* GoogleService-Info.plist */; };
 		96BA4EDE28565DF20077BE31 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BA4EDD28565DF20077BE31 /* WelcomeView.swift */; };
@@ -59,6 +61,8 @@
 		969EC1992863472B00D81BB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		969EC19B2863503C00D81BB8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		969EC1C5286387D400D81BB8 /* CustomSearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarCell.swift; sourceTree = "<group>"; };
+		96B6E7922869CFD5006C60F7 /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		96B6E7942869D359006C60F7 /* TPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPButton.swift; sourceTree = "<group>"; };
 		96BA4ED828561A960077BE31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96BA4EDA28561C1C0077BE31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96BA4EDD28565DF20077BE31 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		96B6E7912869CF9A006C60F7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				96B6E7922869CFD5006C60F7 /* XDismissButton.swift */,
+				96B6E7942869D359006C60F7 /* TPButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		96BA4EE728565F090077BE31 /* Login&SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +263,7 @@
 		96C437272864F6D700044EE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96B6E7912869CF9A006C60F7 /* Buttons */,
 				96C437282864F6E100044EE5 /* Cells */,
 				96C437262864F6CB00044EE5 /* UIKit Components */,
 			);
@@ -402,6 +416,7 @@
 				96BA4EE228565E760077BE31 /* Login.swift in Sources */,
 				967BD63A2856107F0093CD01 /* CustomSearchBar.swift in Sources */,
 				96BA4EE028565E370077BE31 /* Homescreen.swift in Sources */,
+				96B6E7952869D359006C60F7 /* TPButton.swift in Sources */,
 				969413A6286635AE0084428E /* FavoritesDetailView.swift in Sources */,
 				969EC19C2863503C00D81BB8 /* SignUpViewModel.swift in Sources */,
 				969EC1C6286387D400D81BB8 /* CustomSearchBarCell.swift in Sources */,
@@ -411,6 +426,7 @@
 				96852392285B5CAD0056E508 /* Favorites.swift in Sources */,
 				969EC19A2863472B00D81BB8 /* LoginViewModel.swift in Sources */,
 				96852390285B5C730056E508 /* MainTabView.swift in Sources */,
+				96B6E7932869CFD5006C60F7 /* XDismissButton.swift in Sources */,
 				967BD636285610110093CD01 /* Repository.swift in Sources */,
 				96BA4EDE28565DF20077BE31 /* WelcomeView.swift in Sources */,
 				969EC171286058B100D81BB8 /* FavoritesViewModel.swift in Sources */,

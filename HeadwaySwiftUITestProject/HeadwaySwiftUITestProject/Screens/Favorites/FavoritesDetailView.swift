@@ -9,8 +9,9 @@ import SwiftUI
 
 struct FavoritesDetailView: View {
     
-    let repository: Repository?
     @Binding var isShowingDetail: Bool
+    
+    let repository: Repository?
     
         var body: some View {
             VStack {
@@ -28,64 +29,22 @@ struct FavoritesDetailView: View {
                         .padding()
                     
                     HStack(spacing: 20) {
-                        VStack {
-                            Text("Username")
-                                .bold()
-                                .font(.caption)
-                            
-                            Text(repository?.owner.login ?? "-")
-                                .foregroundColor(.secondary)
-                                .fontWeight(.semibold)
-                                .italic()
-                        }
-                        
-                        VStack {
-                            Text("Language")
-                                .bold()
-                                .font(.caption)
-                            
-                            Text(repository?.language ?? "-")
-                                .foregroundColor(.secondary)
-                                .fontWeight(.semibold)
-                                .italic()
-                        }
-                        
-                        VStack {
-                            Text("Visibility")
-                                .bold()
-                                .font(.caption)
-                            
-                            Text(repository?.visibility ?? "-")
-                                .foregroundColor(.secondary)
-                                .fontWeight(.semibold)
-                                .italic()
-                        }
-                        
+                        FavoritesInfo(title: "Username", value: repository?.owner.login ?? "-")
+                        FavoritesInfo(title: "Language", value: repository?.language ?? "-")
+                        FavoritesInfo(title: "Visibility", value: repository?.visibility ?? "-")
                     }
-                    
                 }
                 
                 Spacer()
                 
-//                Button {
-//
-//                } label: {
-//                    Text("Visit GitHub")
-//                        .font(.title3)
-//                        .fontWeight(.semibold)
-//                        .frame(width: 260, height: 50)
-//                        .foregroundColor(.white)
-//                        .background(Color.blue)
-//                        .cornerRadius(10)
-//                }
-//                .padding(.bottom, 20)
+                TPButton()
                 
                 VStack {
                     Text("Updated at:") // работаю над датой...
                         .bold()
                         .font(.caption)
                     
-                    Text(repository?.updated_at ?? "")
+//                    Text("\(repository?.updated_at)")
                         .foregroundColor(.secondary)
                         .fontWeight(.light)
                         .italic()
@@ -101,27 +60,33 @@ struct FavoritesDetailView: View {
             .overlay(Button {
                 isShowingDetail = false
             } label: {
-                ZStack {
-                    Circle()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.white)
-                        .opacity(0.6)
-                    
-                    Image(systemName: "xmark")
-                        .imageScale(.small)
-                        .frame(width: 44, height: 44)
-                        .foregroundColor(.black)
-                }
+                XDismissButton()
             }, alignment: .topTrailing)
         }
     }
 
-extension FavoritesDetailView {
-//    
+struct FavoritesDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        FavoritesDetailView(isShowingDetail: .constant(true), repository: Repository(id: 0, node_id: "", name: "react-native", html_url: "", description: "UIApplicationgetKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.", visibility: "private", language: "Java-Script", updated_at: "29 apr.", owner: Owner(login: "hello"), isLiked: true, isSeen: true))
+    }
 }
 
-//struct FavoritesDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavoritesDetailView(repository: Repository(id: 0, node_id: "", name: "react-native", html_url: "", description: "UIApplicationgetKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.", visibility: "private", language: "Java-Script", updated_at: "29 apr.", login: "GXfelix", isLiked: true, isSeen: true), isShowingDetail: .constant(true))
-//    }
-//}
+struct FavoritesInfo: View {
+    
+    let title: String
+    let value: String
+    
+    var body: some View {
+        
+        VStack {
+            Text(title)
+                .bold()
+                .font(.caption)
+            
+            Text(value)
+                .foregroundColor(.secondary)
+                .fontWeight(.semibold)
+                .italic()
+        }
+    }
+}

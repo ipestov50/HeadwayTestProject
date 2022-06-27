@@ -10,8 +10,6 @@ import SwiftUI
 
 struct Favorites: View {
     @StateObject private var favVm = FavoritesViewModel()
-    @State private var isShowingDetail = false
-    @State private var selectedRepository: Repository?
     
     var body: some View {
         ZStack {  
@@ -27,17 +25,17 @@ struct Favorites: View {
                                 .foregroundColor(.secondary)
                         }
                         .onTapGesture {
-                            selectedRepository = item
-                            isShowingDetail = true
+                            favVm.selectedRepository = item
+                            favVm.isShowingDetail = true
                         }
                     }
-                    .blur(radius: isShowingDetail ? 20 : 0)
+                    .blur(radius: favVm.isShowingDetail ? 20 : 0)
                 }
             }
-            .disabled(isShowingDetail)
+            .disabled(favVm.isShowingDetail)
             
-            if isShowingDetail {
-                FavoritesDetailView(repository: selectedRepository!, isShowingDetail: $isShowingDetail)
+            if favVm.isShowingDetail {
+                FavoritesDetailView(isShowingDetail: $favVm.isShowingDetail, repository: favVm.selectedRepository!)
             }
         }
         .navigationTitle("Favorites")

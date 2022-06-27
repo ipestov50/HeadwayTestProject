@@ -10,6 +10,8 @@ import Foundation
 class FavoritesViewModel: ObservableObject {
     
     @Published var savedItems: Array<Repository> = []
+    @Published var isShowingDetail = false
+    @Published var selectedRepository: Repository?
     
     public var db = Database.shared
     
