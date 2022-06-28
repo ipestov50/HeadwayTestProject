@@ -40,6 +40,7 @@ final class Database {
         return repositories
     }
     
+    @discardableResult
     func delete(item: Repository) -> [Repository] {
         var saved = read()
         

@@ -26,7 +26,7 @@ struct MainTabView: View {
                     
                 }
             default:
-                    Favorites()
+                    FavoritesView()
 //                .navigationTitle("Favorites")
             }
         }
@@ -51,6 +51,6 @@ struct MainTabView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        Favorites()
+        FavoritesView()
     }
 }

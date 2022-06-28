@@ -22,9 +22,9 @@ import SwiftUI
         
         
         
-        session.dataTask(with: URL(string: url)!) { data, response, error in
+        session.dataTask(with: URL(string: url)! ) { data, response, error in
             
-            guard let url = URL(string: url) else {
+            guard URL(string: url) != nil else {
                 completion(.failure(.invalidURL))
                 return
             }
