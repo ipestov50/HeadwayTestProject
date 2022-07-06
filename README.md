@@ -14,5 +14,4 @@ Moreover, you can add it to your wishlist and see short details about repository
 
 <img width="457" alt="Снимок экрана 2022-07-01 в 10 32 28" src="https://user-images.githubusercontent.com/105271727/176846825-20d3f68f-b754-47aa-bf7c-9ac9155d9ea5.png">
 
-<img width="390" alt="Снимок экрана 2022-07-01 в 10 34 49" src="https://user-images.githubusercontent.com/105271727/176847265-59d32a27-d80b-411c-b512-2e038ef59ad6.png">
 
