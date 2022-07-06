@@ -13,6 +13,7 @@ final class ViewModel: ObservableObject {
     @Published var query = ""
     @Published var alertItem: AlertItem?
     @Published var isLoading = false
+    @Published var repositories: [Repository] = []
     
     struct RepositoryUI: Identifiable, Codable, Hashable {
         var id: Int {

@@ -7,9 +7,9 @@
 
 import Foundation
 
-class FavoritesViewModel: ObservableObject {
+final class FavoritesViewModel: ObservableObject {
     
-    @Published var savedItems: Array<Repository> = []
+    @Published var savedItems: [Repository] = []
     @Published var isShowingDetail = false
     @Published var selectedRepository: Repository?
     

@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
     @State var selectedIndex = 0
+    @EnvironmentObject var vm: FavoritesViewModel
+    
     let icons = [
         "house",
         "heart"
@@ -23,14 +26,14 @@ struct MainTabView: View {
                         Home()
                     }
                     .navigationTitle("Search Repositories")
-                    
+
                 }
             default:
                     FavoritesView()
-//                .navigationTitle("Favorites")
+//                    
             }
         }
-        
+
         HStack() {
             ForEach(0..<2, id: \.self) { number in
                 Spacer()
@@ -44,9 +47,11 @@ struct MainTabView: View {
                 Spacer()
             }
         }
-        
+
     }
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {

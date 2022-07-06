@@ -13,10 +13,12 @@ import Firebase
 struct SwiftUIDelegateApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    var favorite = FavoritesViewModel()
+    
     var body: some Scene {
         WindowGroup {
             WelcomeView()
-//             MainTabView()
+//            MainTabView().environmentObject(favorite)
         }
     }
 }

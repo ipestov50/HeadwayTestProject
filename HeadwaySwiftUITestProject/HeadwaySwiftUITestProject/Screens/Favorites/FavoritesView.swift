@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct FavoritesView: View {
+    
     @StateObject private var vm = FavoritesViewModel()
     
     var body: some View {
@@ -30,6 +31,7 @@ struct FavoritesView: View {
                         }
                     }
                     .blur(radius: vm.isShowingDetail ? 20 : 0)
+                    .listRowSeparator(.hidden)
                 }
                 .onDelete(perform: deleteItems)
             }

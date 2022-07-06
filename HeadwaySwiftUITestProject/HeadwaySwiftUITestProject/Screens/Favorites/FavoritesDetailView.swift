@@ -37,7 +37,7 @@ struct FavoritesDetailView: View {
                 
                 Spacer()
                 
-                TPButton()
+//                TPButton()
                 
                 VStack {
                     Text("Updated at:") // работаю над датой...
