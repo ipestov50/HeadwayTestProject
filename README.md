@@ -1,4 +1,4 @@
-# My Test Project
+# Repository Searcher
 
 Find your favorite repository =) 
 
